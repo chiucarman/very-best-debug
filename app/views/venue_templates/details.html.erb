@@ -57,7 +57,10 @@
   <% @the_venue.comments.each do |comment| %>
   <tr>
     <td>
-      <%= comment.commenter.username %>
+      <% author_id = comment.author_id %>
+      <% matching_authors = User.where({ :id => author_id }) %>
+      <% the_author = matching_authors.at(0) %>
+      <%= the_author.username %>
     </td>
 
     <td>
