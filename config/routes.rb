@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  get("/", { :controller => "users", :action => "home" })
+  get("/", { :controller => "users", :action => "index" })
   get("/users", { :controller => "users", :action => "index" })
   get("/users/:username", { :controller => "users", :action => "show" })
-  post("/insert_user_record", { :controller => "venues", :action => "create" })
+  post("/insert_user_record", { :controller => "users", :action => "create" })
   post("/update_user/:user_id", { :controller => "users", :action => "update" })
 
   get("/venues", { :controller => "venues", :action => "index" })
